@@ -9,7 +9,7 @@ const ModelViewer = ({ modelPath, scale = 40, position = [0, 0, 0] }) => {
     <Canvas>
       <ambientLight intensity={0.3} />
       <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
-      <pointLight position={[-10, -10, -10]} />
+      <pointLight position={[15, 15, 15]} />
       <Suspense fallback={null}>
         <GltfModel modelPath={modelPath} scale={scale} position={position} />
         <OrbitControls />
@@ -33,7 +33,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex h-screen w-screen flex-col items-center justify-center bg-zinc-900 text-white">
+      <main className="flex h-screen w-screen flex-col items-center justify-center bg-zinc-400 text-white">
         <iframe
           className="h-full w-full"
           title="Compass"
@@ -45,7 +45,7 @@ export default function Home() {
           web-share
           src="https://sketchfab.com/models/e712ba658ab84d7791efba54d6f5c243/embed?autostart=1&preload=1&annotation_tooltip_visible=0&annotations_visible=0"
         ></iframe>
-        <ModelViewer modelPath="Glasses.glb" />
+        <ModelViewer modelPath="Ice_Watch_shaded.glb" />
       </main>
     </div>
   )
