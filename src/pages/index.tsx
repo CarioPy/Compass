@@ -1,6 +1,22 @@
-import React from "react"
-
+import React, { Suspense } from "react"
 import Head from "next/head"
+import { Canvas } from "@react-three/fiber"
+import { OrbitControls } from "@react-three/drei"
+import GltfModel from "../components/Gtf"
+
+const ModelViewer = ({ modelPath, scale = 40, position = [0, 0, 0] }) => {
+  return (
+    <Canvas>
+      <ambientLight intensity={0.3} />
+      <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
+      <pointLight position={[-10, -10, -10]} />
+      <Suspense fallback={null}>
+        <GltfModel modelPath={modelPath} scale={scale} position={position} />
+        <OrbitControls />
+      </Suspense>
+    </Canvas>
+  )
+}
 
 export default function Home() {
   return (
@@ -27,8 +43,9 @@ export default function Home() {
           execution-while-out-of-viewport
           execution-while-not-rendered
           web-share
-          src="https://sketchfab.com/models/e712ba658ab84d7791efba54d6f5c243/embed?autostart=1&preload=1"
+          src="https://sketchfab.com/models/e712ba658ab84d7791efba54d6f5c243/embed?autostart=1&preload=1&annotation_tooltip_visible=0&annotations_visible=0"
         ></iframe>
+        <ModelViewer modelPath="Glasses.glb" />
       </main>
     </div>
   )
