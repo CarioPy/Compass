@@ -1,22 +1,5 @@
-import React, { Suspense } from "react"
+import React from "react"
 import Head from "next/head"
-import { Canvas } from "@react-three/fiber"
-import { OrbitControls } from "@react-three/drei"
-import GltfModel from "../components/Gtf"
-
-const ModelViewer = ({ modelPath, scale = 40, position = [0, 0, 0] }) => {
-  return (
-    <Canvas>
-      <ambientLight intensity={0.3} />
-      <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
-      <pointLight position={[15, 15, 15]} />
-      <Suspense fallback={null}>
-        <GltfModel modelPath={modelPath} scale={scale} position={position} />
-        <OrbitControls />
-      </Suspense>
-    </Canvas>
-  )
-}
 
 export default function Home() {
   return (
@@ -33,19 +16,26 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex h-screen w-screen flex-col items-center justify-center bg-zinc-400 text-white">
+      <main className="flex h-screen w-screen flex-col items-center justify-center bg-white text-white">
+        <div className="absolute top-0 h-24 w-full bg-white shadow-2xl">
+          Hello
+        </div>
+        <div className="absolute right-0 h-full w-24 bg-white ">Hello</div>
+        <div className="absolute bottom-0 h-24 w-full bg-white ">Hello</div>
+        <div className="absolute left-0 h-full w-24 bg-white ">Hello</div>
+
         <iframe
           className="h-full w-full"
-          title="Compass"
+          title="Firewatch Fan Art"
           frameBorder="0"
+          allowFullScreen
           allow="autoplay; fullscreen; xr-spatial-tracking"
           xr-spatial-tracking
           execution-while-out-of-viewport
           execution-while-not-rendered
           web-share
-          src="https://sketchfab.com/models/e712ba658ab84d7791efba54d6f5c243/embed?autostart=1&preload=1&annotation_tooltip_visible=0&annotations_visible=0"
+          src="https://sketchfab.com/models/5646e6a3c8834022a0e289465f0bbc5d/embed?camera=0&autostart=1&preload=1"
         ></iframe>
-        <ModelViewer modelPath="Ice_Watch_shaded.glb" />
       </main>
     </div>
   )
