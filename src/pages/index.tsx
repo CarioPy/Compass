@@ -17,12 +17,22 @@ export default function Home() {
       </Head>
 
       <main className="flex h-screen w-screen flex-col items-center justify-center bg-white text-white">
-        <div className="absolute top-0 h-24 w-full bg-white shadow-2xl">
-          Hello
+        <div className="absolute left-0 h-full w-36 bg-zinc-800"></div>
+        <div className="absolute left-48 top-10 rounded-xl bg-white p-8 shadow-lg">
+          <h1 className="text-3xl font-bold text-zinc-800">Sketchfab</h1>
+          <p className="mt-4 text-xl font-light text-zinc-800 underline">
+            Epic Games
+          </p>
+          <p className="text-md mt-8 font-light text-zinc-800">
+            <ul className="list-disc">
+              <li>15€ per month</li>
+              <li> iframe - can't be loaded without connection </li>
+              <li> can be embed - transparent </li>
+              <li> accept every format - no problem with animations </li>
+              <li> annotations available </li>
+            </ul>
+          </p>
         </div>
-        <div className="absolute right-0 h-full w-24 bg-white ">Hello</div>
-        <div className="absolute bottom-0 h-24 w-full bg-white ">Hello</div>
-        <div className="absolute left-0 h-full w-24 bg-white ">Hello</div>
 
         <iframe
           className="h-full w-full"
@@ -34,7 +44,7 @@ export default function Home() {
           execution-while-out-of-viewport
           execution-while-not-rendered
           web-share
-          src="https://sketchfab.com/models/5646e6a3c8834022a0e289465f0bbc5d/embed?camera=0&autostart=1&preload=1"
+          src="https://sketchfab.com/models/8ad7eb387e6e41e0abfe17eec5351f8b/embed?camera=0&autostart=1&preload=1"
         ></iframe>
       </main>
     </div>
