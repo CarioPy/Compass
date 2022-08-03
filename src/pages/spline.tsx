@@ -18,8 +18,8 @@ export default function Home() {
       </Head>
 
       <main className="flex h-screen w-screen flex-col items-center justify-center bg-white text-white">
-        <div className="absolute left-0 h-full w-36 bg-zinc-800">
-          <div className="p-2">
+        <div className="absolute left-0 h-full w-36 bg-none lg:bg-zinc-800">
+          <div className="mt-10 p-2 ">
             <Link href="../">
               <h2 className="text white mb-2 cursor-pointer text-xl hover:text-[#d9c27e]">
                 SketchFab
@@ -32,7 +32,7 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        <div className="absolute left-48 top-10 rounded-xl bg-white p-8 shadow-lg">
+        <div className="absolute left-48 top-10 hidden rounded-xl bg-white p-8 shadow-lg lg:block">
           <h1 className="text-3xl font-bold text-zinc-800">Spline</h1>
           <p className="mt-4 text-xl font-light text-zinc-800 underline">
             spline.design
