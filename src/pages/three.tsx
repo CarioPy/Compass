@@ -3,12 +3,13 @@ import { OrbitControls } from "@react-three/drei"
 import { Canvas } from "@react-three/fiber"
 import GltfModel from "../components/Gtf"
 import Head from "next/head"
+import Link from "next/link"
 
 export default function Three() {
   return (
     <div>
       <Head>
-        <title>Next.js advanced start template.</title>
+        <title>3D renders</title>
 
         <meta
           name="description"
@@ -20,8 +21,21 @@ export default function Three() {
       </Head>
 
       <main className="flex h-screen w-screen flex-col items-center justify-center bg-white text-white">
-        <div className="absolute left-0 h-full w-36 bg-zinc-800"></div>
-        <div className="absolute left-48 top-10 rounded-xl bg-white p-8 shadow-lg">
+        <div className="absolute left-0 z-10 h-full w-36 bg-zinc-800 ">
+          <div className="p-2">
+            <Link href="../">
+              <h2 className="text white mb-2 cursor-pointer text-xl hover:text-[#d9c27e]">
+                SketchFab
+              </h2>
+            </Link>
+            <Link href="../spline">
+              <h2 className="text white mb-2 cursor-pointer text-xl hover:text-[#d9c27e]">
+                Spline
+              </h2>
+            </Link>
+          </div>
+        </div>
+        <div className="absolute left-48 top-10 z-10 rounded-xl bg-white p-8 shadow-lg">
           <h1 className="text-3xl font-bold text-zinc-800">Three.js</h1>
           <p className="mt-4 text-xl font-light text-zinc-800 underline">
             mrDoob
@@ -33,6 +47,7 @@ export default function Three() {
               <li> can be embed - transparent </li>
               <li> less easy to set </li>
             </ul>
+            30
           </p>
         </div>
         <ModelViewer modelPath="Shaded_phone.glb" />
@@ -41,12 +56,20 @@ export default function Three() {
   )
 }
 
-const ModelViewer = ({ modelPath, scale = 40, position = [0, 0, -250] }) => {
+const ModelViewer = ({ modelPath, scale = 40, position = [0, 0, 0] }) => {
   return (
-    <Canvas>
+    <Canvas
+      camera={{ position: [2, 0, 600], fov: 30 }}
+      style={{
+        backgroundColor: "#d9c27e",
+        width: "100vw",
+        height: "100vh",
+      }}
+    >
       <ambientLight intensity={1} />
-      <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
-      <pointLight position={[15, 15, 15]} />
+      <spotLight position={[-100, -100, 100]} angle={0.15} penumbra={10} />
+      <pointLight position={[-300, 300, 300]} color="#eba3ff" />
+      <pointLight position={[300, -300, -300]} color="#32a852" />
       <Suspense fallback={null}>
         <GltfModel modelPath={modelPath} scale={scale} position={position} />
         <OrbitControls />

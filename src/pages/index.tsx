@@ -1,11 +1,12 @@
 import React from "react"
 import Head from "next/head"
+import Link from "next/link"
 
 export default function Home() {
   return (
     <div>
       <Head>
-        <title>Next.js advanced start template.</title>
+        <title>3D renders</title>
 
         <meta
           name="description"
@@ -17,15 +18,28 @@ export default function Home() {
       </Head>
 
       <main className="flex h-screen w-screen flex-col items-center justify-center bg-white text-white">
-        <div className="absolute left-0 h-full w-36 bg-zinc-800"></div>
+        <div className="absolute left-0 h-full w-36 bg-zinc-800">
+          <div className="p-2">
+            <Link href="/spline">
+              <h2 className="text white mb-2 cursor-pointer text-xl hover:text-[#d9c27e]">
+                Spline
+              </h2>
+            </Link>
+            <Link href="/three">
+              <h2 className="text white mb-2 cursor-pointer text-xl hover:text-[#d9c27e]">
+                Three.js
+              </h2>
+            </Link>
+          </div>
+        </div>
         <div className="absolute left-48 top-10 rounded-xl bg-white p-8 shadow-lg">
-          <h1 className="text-3xl font-bold text-zinc-800">Sketchfab</h1>
+          <h1 className="text-3xl font-bold text-zinc-800">SketchFab</h1>
           <p className="mt-4 text-xl font-light text-zinc-800 underline">
             Epic Games
           </p>
           <p className="text-md mt-8 font-light text-zinc-800">
             <ul className="list-disc">
-              <li>15€ per month</li>
+              <li> 79€ per month </li>
               <li> iframe - can't be loaded without connection </li>
               <li> can be embed - transparent </li>
               <li> accept every format - no problem with animations </li>
