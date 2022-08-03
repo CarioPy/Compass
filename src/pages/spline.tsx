@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>3D renders</title>
+        <title>3D viewers</title>
 
         <meta
           name="description"
