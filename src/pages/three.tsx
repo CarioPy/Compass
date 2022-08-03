@@ -32,7 +32,7 @@ export default function Three() {
 
         <main className="flex h-screen w-screen flex-col items-center justify-center bg-white text-white">
           <div className="absolute left-0 z-10 h-full w-36 bg-none lg:bg-zinc-800 ">
-            <div className="gp-2 mt-10">
+            <div className="mt-10 p-2">
               <Link href="../">
                 <h2 className="text white mb-2 cursor-pointer text-xl hover:text-[#d9c27e]">
                   SketchFab
